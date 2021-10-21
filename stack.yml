@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+     csutortok:
+        ports:
+            - '80'
+        environment:
+            - TITLE=csutortok
+            - COLOR=yellow
+        image: lalyos/12factor
+     front:
+        image: cmd.cat/curl/dig
+        command: sleep 9999
+        environment:
+          - BACKEND_API=http://csutortok:80
